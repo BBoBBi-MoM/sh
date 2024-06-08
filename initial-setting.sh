@@ -11,9 +11,8 @@ if [ $? -eq 0 ]; then
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     sudo apt install ./google-chrome-stable_current_amd64.deb
     # install vscode
-    wget -o vscode.deb https://go.microsoft.com/fwlink/?LinkID=760868
-    sudo apt install ./vscode.deb
-    rm vscode.deb google-chrome-stable_current_amd64.deb
+    add-apt-repository -y "deb https://packages.microsoft.com/repos/vscode stable main "
+    sudo apt -y install code
 else
     echo "Sudo credentials not available. Script terminated."
 fi
